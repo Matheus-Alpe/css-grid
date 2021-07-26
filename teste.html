@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/style.css">
+  <title>Flexbox vs CSS Grid: Unknown Content Size!</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="caixa">
+            <div class="inner">
+                <div class="texto"></div>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="inner">
+                <div class="texto"></div>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="inner">
+                <div class="texto"></div>
+            </div>
+        </div>
+        <div class="caixa">
+            <div class="inner">
+                <div class="texto"></div>
+            </div>
+        </div>
+        
+    </div>
+
+  <style>
+    .container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 800px));
+        grid-auto-rows: 180px;
+        grid-gap: 10px;
+    }
+
+    .caixa {
+        position: relative;
+        background: white;
+    }
+
+    .inner {
+        position: absolute;
+        background: purple;
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+        transition: height .5s;
+    }
+
+    .texto {
+        background-color: cadetblue;
+        width: 100%;
+        height: 50%;
+    }
+
+    .caixa:hover .inner {
+        height: 150%;
+        z-index: 2;
+    }
+
+
+  </style>
+
+</body>
+
+</html>
